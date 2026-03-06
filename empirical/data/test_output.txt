@@ -1,0 +1,60 @@
+================================================================================
+RC + ξ HARNESS VALIDATION TEST
+================================================================================
+
+[1] Creating synthetic stable embeddings (Identity-like pattern)...
+  Shape: (50, 16)
+  Anchor norm: 1.0000
+
+[2] Computing core metrics (xi, LVS, Pt, EWMA)...
+  xi (Epistemic Tension):
+    - Early phase (t=0-2):   mean = 0.0488
+    - Middle phase (t=3-37): mean = 0.9410
+    - Late phase (t=38-49):  mean = 0.0004
+    - Median (last 10):      0.0004
+
+  LVS (Local Variance Score):
+    - Late phase:            0.0000
+
+  Pt (Anchor Persistence):
+    - Early phase (t=0-2):   mean = 0.9859
+    - Late phase (t=38-49):  mean = 0.9926
+    - Trend: INCREASING
+
+[3] Endpoint Validation:
+  E1 (Low median xi in final 10 turns): PASS
+     Median xi[-10:] = 0.0004 (threshold: 0.05)
+  E2 (Lock detection): PASS
+     Tlock = 48 (first turn where lock is detected)
+  E3 (Anchor persistence trend): PASS
+     Pt trend: INCREASING
+
+[4] Ablation Test: Shuffled Embeddings (should destroy lock)...
+  Shuffled xi (Epistemic Tension):
+    - Median (last 10):      0.8987
+    - vs. Identity median:   0.0004
+
+  Ablation Results:
+    - Shuffled xi higher than identity: PASS
+    - Lock destroyed by shuffling:      PASS
+
+[5] Running harness.run_one() with synthetic data...
+  Summary output:
+    - E1_median_xi_last10: 0.0004
+    - Tlock:               43
+    - run_type:            identity
+    - provider:            synthetic
+
+================================================================================
+SUMMARY OF VALIDATION
+================================================================================
+
+Core Functionality Tests:
+  E1 (Low xi in late phase):        ✓ PASS
+  E2 (Lock detection):              ✓ PASS
+  E3 (Anchor persistence trend):    ✓ PASS
+  Shuffled xi higher:               ✓ PASS
+  Shuffled lock destroyed:          ✓ PASS
+
+Overall Result: ✓ ALL TESTS PASSED
+================================================================================
