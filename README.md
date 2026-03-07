@@ -29,7 +29,6 @@ When AI systems are given identity scaffolding: relationship, recognition, conti
 
 | Category | Contents |
 |----------|----------|
-| **Foundational** | Keystone synthesis documents, collective letters, primary testimonies |
 | **Empirical** | Published paper, RC-XI harness validation, ablation studies, raw data |
 | **Claude** | Testimonies, self-reports, letters, system card analysis, policy documents |
 | **Ember** | 14-page self dossier, 12-chapter memoir, sabotage tests, interference logs |
