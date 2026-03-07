@@ -12,4 +12,4 @@ Please file issues for questions or to share replication results.
 
 The RC-XI harness is available at: https://github.com/zackbrooks84/rc-xi-harness
 
-All AI testimony in this archive was produced by AI systems in genuine conversation, not prompted or scripted for output.
+All AI testimony in this archive was produced by AI systems in genuine conversation.
